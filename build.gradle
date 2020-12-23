@@ -1,0 +1,96 @@
+buildscript {
+    repositories {
+        maven { url = 'https://files.minecraftforge.net/maven' }
+        jcenter()
+        mavenCentral()
+        maven {
+            url = 'http://repo.spongepowered.org/maven'
+        }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:3.+'
+        classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
+    }
+}
+
+apply plugin: 'net.minecraftforge.gradle'
+apply plugin: 'org.spongepowered.mixin'
+
+version = "1.0.0"
+group = "com.focamacho.sealmixins"
+archivesBaseName = "SealMixins-1.12.2"
+
+sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
+
+sourceSets {
+    main {
+        ext.refMap = 'mixins.sealmixins.refmap.json'
+    }
+}
+
+minecraft {
+    mappings channel: 'snapshot', version: '20171003-1.12'
+
+    runs {
+        client {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+            property 'forge.logging.console.level', 'debug'
+        }
+
+        server {
+            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+            property 'forge.logging.console.level', 'debug'
+        }
+    }
+}
+
+configurations {
+    embed
+    implementation.extendsFrom(embed)
+}
+
+repositories {
+    //mavenCentral()
+    maven {
+        url = 'http://repo.spongepowered.org/maven'
+    }
+
+    maven {
+        name = "CurseMaven"
+        url = "https://www.cursemaven.com"
+    }
+}
+
+dependencies {
+    minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2854'
+
+	//Immersive Engineering
+    compileOnly("curse.maven:immersiveengineering-231951:2974106")
+
+    //Tech Guns
+    compileOnly("curse.maven:techguns-244201:2958103")
+
+    //Mixins
+    embed('org.spongepowered:mixin:0.8-SNAPSHOT') {
+        transitive = false
+    }
+}
+
+jar {
+    from(configurations.embed.collect { it.isDirectory() ? it : zipTree(it) }) {
+        exclude 'LICENSE.txt', 'META-INF/MANIFSET.MF', 'META-INF/maven/**', 'META-INF/*.RSA', 'META-INF/*.SF'
+    }
+
+    manifest.attributes(
+            'FMLCorePluginContainsFMLMod': true,
+            'ForceLoadAsMod': true,
+            'TweakClass': 'org.spongepowered.asm.launch.MixinTweaker',
+            'MixinConfigs': 'mixins.sealmixins.json',
+            'FMLCorePlugin': 'com.focamacho.sealmixins.asm.SealMixinsLoader'
+    )
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}

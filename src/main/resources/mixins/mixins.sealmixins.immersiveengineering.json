@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "com.focamacho.sealmixins.mixin.immersiveengineering",
+  "refmap": "mixins.sealmixins.refmap.json",
+  "target": "@env(DEFAULT)",
+  "minVersion": "0.8",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "IESlotBelljarMixin",
+    "TileEntityBelljarMixin"
+  ]
+}

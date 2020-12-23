@@ -1,0 +1,16 @@
+[
+{
+  "modid": "sealmixins",
+  "name": "Seal Mixins",
+  "description": "Mod criado para aprimoramento da experiência em servidores.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "https://sealisland.com.br",
+  "updateUrl": "",
+  "authorList": ["Focamacho"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
