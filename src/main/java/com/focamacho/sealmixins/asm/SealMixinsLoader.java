@@ -1,6 +1,7 @@
 package com.focamacho.sealmixins.asm;
 
 import com.focamacho.sealmixins.SealMixins;
+import com.focamacho.sealmixins.config.ConfigObject;
 import com.focamacho.sealmixins.config.SealMixinsConfig;
 import com.focamacho.sealmixins.util.ModHandler;
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
@@ -14,9 +15,9 @@ import java.util.Map;
 @IFMLLoadingPlugin.MCVersion("1.12.2")
 public class SealMixinsLoader implements IFMLLoadingPlugin {
 
-    public SealMixinsLoader() {
-        SealMixinsConfig sealConfig;
+    public static SealMixinsConfig sealConfig;
 
+    public SealMixinsLoader() {
         try {
             sealConfig = new SealMixinsConfig();
             sealConfig.loadConfig();
@@ -26,11 +27,10 @@ public class SealMixinsLoader implements IFMLLoadingPlugin {
             return;
         }
 
-        SealMixinsConfig.ConfigObject config = sealConfig.configObject;
+        ConfigObject config = sealConfig.configObject;
 
         if(config.gardenClocheMaxSeeds > 1) loadMixin("immersiveengineering", "gardencloche");
         if(config.disableTGExplosions) loadMixin("techguns", "explosion");
-        if(config.hookTGDamage) loadMixin("techguns", "damage");
         if(config.disableMekanismTubes) loadMixin("mekanism", "tubes");
 
         MixinBootstrap.init();
