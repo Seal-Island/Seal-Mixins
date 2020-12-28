@@ -51,11 +51,10 @@ configurations {
 }
 
 repositories {
-    //mavenCentral()
+    mavenCentral()
     maven {
         url = 'http://repo.spongepowered.org/maven'
     }
-
     maven {
         name = "CurseMaven"
         url = "https://www.cursemaven.com"
@@ -63,7 +62,7 @@ repositories {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2854'
+    minecraft "net.minecraftforge:forge:1.12.2-14.23.5.2854"
 
 	//Immersive Engineering
     compileOnly("curse.maven:immersiveengineering-231951:2974106")
@@ -71,10 +70,16 @@ dependencies {
     //Tech Guns
     compileOnly("curse.maven:techguns-244201:2958103")
 
+    //Mekanism
+    compileOnly("curse.maven:mekanism-268560:2835175")
+
     //Mixins
-    embed('org.spongepowered:mixin:0.8-SNAPSHOT') {
+    embed("org.spongepowered:mixin:0.8-SNAPSHOT") {
         transitive = false
     }
+
+    //Jankson
+    embed("blue.endless:jankson:1.1.0")
 }
 
 jar {

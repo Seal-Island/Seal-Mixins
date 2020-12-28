@@ -1,5 +1,7 @@
 package com.focamacho.sealmixins.asm;
 
+import com.focamacho.sealmixins.SealMixins;
+import com.focamacho.sealmixins.config.SealMixinsConfig;
 import com.focamacho.sealmixins.util.ModHandler;
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
 import org.spongepowered.asm.launch.MixinBootstrap;
@@ -13,8 +15,23 @@ import java.util.Map;
 public class SealMixinsLoader implements IFMLLoadingPlugin {
 
     public SealMixinsLoader() {
-        loadMixin("immersiveengineering");
-        loadMixin("techguns");
+        SealMixinsConfig sealConfig;
+
+        try {
+            sealConfig = new SealMixinsConfig();
+            sealConfig.loadConfig();
+        } catch(Exception e) {
+            SealMixins.logger.error("Error loading the Seal Mixins config!");
+            e.printStackTrace();
+            return;
+        }
+
+        SealMixinsConfig.ConfigObject config = sealConfig.configObject;
+
+        if(config.gardenClocheMaxSeeds > 1) loadMixin("immersiveengineering", "gardencloche");
+        if(config.disableTGExplosions) loadMixin("techguns", "explosion");
+        if(config.hookTGDamage) loadMixin("techguns", "damage");
+        if(config.disableMekanismTubes) loadMixin("mekanism", "tubes");
 
         MixinBootstrap.init();
         ModHandler.clear();
@@ -44,9 +61,9 @@ public class SealMixinsLoader implements IFMLLoadingPlugin {
         return null;
     }
 
-    private void loadMixin(String modid){
+    private void loadMixin(String modid, String mixin){
         if(ModHandler.load(modid)) {
-            Mixins.addConfiguration("mixins/mixins.sealmixins." + modid + ".json");
+            Mixins.addConfiguration("mixins/mixins.sealmixins." + modid + "." +  mixin + ".json");
         }
     }
 

@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "com.focamacho.sealmixins.mixin.mekanism",
+  "refmap": "mixins.sealmixins.refmap.json",
+  "target": "@env(DEFAULT)",
+  "minVersion": "0.8",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "TileEntityLogisticalTransporterMixin",
+    "TileEntityMechanicalPipeMixin",
+    "TileEntityPressurizedTubeMixin",
+    "TileEntityUniversalCableMixin"
+  ]
+}

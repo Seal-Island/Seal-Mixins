@@ -50,8 +50,7 @@ public abstract class TileEntityBelljarMixin extends TileEntityIEBase implements
     @Shadow public EnumFacing facing;
 
     @Override
-    public void update()
-    {
+    public void update() {
         ApiUtils.checkForNeedlessTicking((TileEntityBelljar)(Object)this);
         if(dummy!=0||world.isBlockPowered(getPos()))
             return;
