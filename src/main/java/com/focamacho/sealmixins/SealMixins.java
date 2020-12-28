@@ -11,7 +11,7 @@ public class SealMixins {
 	
     public static final String MODID = "sealmixins";
     public static final String NAME = "Seal Mixins";
-    public static final String VERSION = "1.0.0";
+    public static final String VERSION = "1.0.1";
 
     public static Logger logger = LogManager.getLogger(NAME);
 

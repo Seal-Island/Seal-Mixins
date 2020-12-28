@@ -16,7 +16,7 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'org.spongepowered.mixin'
 
-version = "1.0.0"
+version = "1.0.1"
 group = "com.focamacho.sealmixins"
 archivesBaseName = "SealMixins-1.12.2"
 
