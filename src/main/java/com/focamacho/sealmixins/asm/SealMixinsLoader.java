@@ -32,6 +32,7 @@ public class SealMixinsLoader implements IFMLLoadingPlugin {
         if(config.gardenClocheMaxSeeds > 1) loadMixin("immersiveengineering", "gardencloche");
         if(config.disableTGExplosions) loadMixin("techguns", "explosion");
         if(config.disableMekanismTubes) loadMixin("mekanism", "tubes");
+        if(config.patchouliModCheck) loadMixin("patchouli", "modcheck");
 
         MixinBootstrap.init();
         ModHandler.clear();

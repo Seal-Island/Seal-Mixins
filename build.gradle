@@ -73,6 +73,9 @@ dependencies {
     //Mekanism
     compileOnly("curse.maven:mekanism-268560:2835175")
 
+    //Patchouli
+    compileOnly("curse.maven:patchouli-306770:3087124")
+
     //Mixins
     embed("org.spongepowered:mixin:0.8-SNAPSHOT") {
         transitive = false

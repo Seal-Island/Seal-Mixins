@@ -13,4 +13,7 @@ public class ConfigObject {
     @Comment("Disables Tech-Guns explosions. Server-side only.")
     public boolean disableTGExplosions = false;
 
+    @Comment("Adds a mod detection argument to the patchouli entries.")
+    public boolean patchouliModCheck = true;
+
 }
