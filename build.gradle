@@ -80,6 +80,15 @@ dependencies {
     //Patchouli
     compileOnly("curse.maven:patchouli-306770:3087124")
 
+    //The Aurorian
+    compileOnly("curse.maven:theaurorian-352137:3249263")
+
+    //Actually Additions
+    compileOnly("curse.maven:actuallyadditions-228404:3117927")
+
+    //EnderIO
+    compileOnly("curse.maven:enderio-64578:3124452")
+
     //Mixins
     embed("org.spongepowered:mixin:0.8-SNAPSHOT") {
         transitive = false

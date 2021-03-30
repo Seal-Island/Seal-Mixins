@@ -6,11 +6,11 @@ import java.io.File;
 
 public class SealMixinsConfig {
 
-    public ConfigObject configObject;
+    public static ConfigObj configObject;
 
-    public void loadConfig() {
+    public static void loadConfig() {
         String configFileName = "./config/sealmixins.json";
-        configObject = new SealConfig().getConfig(new File(configFileName), ConfigObject.class);
+        configObject = new SealConfig().getConfig(new File(configFileName), ConfigObj.class);
     }
 
 }
