@@ -4,7 +4,7 @@ buildscript {
         jcenter()
         mavenCentral()
         maven {
-            url = 'http://repo.spongepowered.org/maven'
+            url = 'https://repo.spongepowered.org/repository/maven-public/'
         }
     }
     dependencies {
@@ -53,11 +53,15 @@ configurations {
 repositories {
     mavenCentral()
     maven {
-        url = 'http://repo.spongepowered.org/maven'
+        url = 'https://repo.spongepowered.org/repository/maven-public/'
     }
     maven {
         name = "CurseMaven"
         url = "https://www.cursemaven.com"
+    }
+    maven {
+        name = "Focamacho's Repositry"
+        url = "https://repo.focamacho.com/repository/releases/"
     }
 }
 
@@ -81,8 +85,8 @@ dependencies {
         transitive = false
     }
 
-    //Jankson
-    embed("blue.endless:jankson:1.1.0")
+    //Seal Config
+    embed("com.focamacho:sealconfig:+")
 }
 
 jar {
