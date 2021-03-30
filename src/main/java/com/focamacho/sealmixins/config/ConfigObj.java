@@ -26,6 +26,9 @@ public class ConfigObj {
     @ConfigObject
     public Minecraft minecraft = new Minecraft();
 
+    @ConfigObject
+    public DraconicEvolution draconicEvolution = new DraconicEvolution();
+
     public static class ImmersiveEngineering {
 
         @Comment("A quantidade máxima de sementes que um Garden-Cloche consegue suportar.\n" +
@@ -75,6 +78,13 @@ public class ConfigObj {
 
         @Comment("Dispara um evento \"EnderTeleportEvent\" ao comer uma Chorus Fruit. Permitindo o cancelamento.")
         public boolean chorusTeleportEvent = true;
+
+    }
+
+    public static class DraconicEvolution {
+
+        @Comment("Desabilita a possibilidade dos Dislocators teleportarem entidades quando um jogador bate nelas com o item.")
+        public boolean disableDislocatorEntity = false;
 
     }
 

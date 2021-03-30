@@ -38,6 +38,9 @@ public class SealMixinsLoader implements IFMLLoadingPlugin {
         //EnderIO
         if(config.enderIO.staffTeleportEvent) loadMixin("enderio", "teleport");
 
+        //Draconic Evolution
+        if(config.draconicEvolution.disableDislocatorEntity) loadMixin("draconicevolution", "dislocator");
+
         MixinBootstrap.init();
         ModHandler.clear();
     }

@@ -19,7 +19,7 @@ public class TravelControllerMixin {
         if(!(source == TravelSource.STAFF || source == TravelSource.STAFF_BLINK)) return;
 
         net.minecraftforge.event.entity.living.EnderTeleportEvent event = new net.minecraftforge.event.entity.living.EnderTeleportEvent(player, coord.getX(), coord.getY(), coord.getZ(), 0.0F);
-        if (net.minecraftforge.common.MinecraftForge.EVENT_BUS.post(event)) cir.cancel();
+        if (net.minecraftforge.common.MinecraftForge.EVENT_BUS.post(event)) cir.setReturnValue(true);
     }
 
 }

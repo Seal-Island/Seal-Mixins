@@ -89,6 +89,9 @@ dependencies {
     //EnderIO
     compileOnly("curse.maven:enderio-64578:3124452")
 
+    //Draconic Evolution
+    compileOnly("curse.maven:draconicevolution-223565:3051542")
+
     //Mixins
     embed("org.spongepowered:mixin:0.8-SNAPSHOT") {
         transitive = false
