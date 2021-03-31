@@ -14,7 +14,8 @@ public class TheAuroriaEvent {
         if(event.getEntity() instanceof EntityPlayer) {
             if(event.getEntity().dimension == TAConfig.Config_AurorianDimID && SealMixinsConfig.configObject.theAurorian.blockTheAurorianTeleport) {
                 event.setCanceled(true);
-                event.getEntity().sendMessage(new TextComponentString(SealMixinsConfig.configObject.theAurorian.blockTheAurorianTeleportMessage));
+                String msg = SealMixinsConfig.configObject.theAurorian.blockTheAurorianTeleportMessage;
+                if(!msg.isEmpty()) event.getEntity().sendMessage(new TextComponentString(msg));
             }
         }
     }

@@ -6,28 +6,40 @@ import com.focamacho.sealconfig.relocated.blue.endless.jankson.Comment;
 public class ConfigObj {
 
     @ConfigObject
+    @Comment("Modificações para o Immersive Engineering")
     public ImmersiveEngineering immersiveEngineering = new ImmersiveEngineering();
 
     @ConfigObject
+    @Comment("Modificações para o Tech Guns")
     public TechGuns techGuns = new TechGuns();
 
     @ConfigObject
+    @Comment("Modificações para o Patchouli")
     public Patchouli patchouli = new Patchouli();
 
     @ConfigObject
+    @Comment("Modificações para o The Aurorian")
     public TheAurorian theAurorian = new TheAurorian();
 
     @ConfigObject
+    @Comment("Modificações para o EnderIO")
     public EnderIO enderIO = new EnderIO();
 
     @ConfigObject
+    @Comment("Modificações para o Actually Additions")
     public ActuallyAdditions actuallyAdditions = new ActuallyAdditions();
 
     @ConfigObject
+    @Comment("Modificações para o Minecraft")
     public Minecraft minecraft = new Minecraft();
 
     @ConfigObject
+    @Comment("Modificações para o Draconic Evolution")
     public DraconicEvolution draconicEvolution = new DraconicEvolution();
+
+    @ConfigObject
+    @Comment("Modificações para o Tinkers' Construct")
+    public TinkersConstruct tinkersConstruct = new TinkersConstruct();
 
     public static class ImmersiveEngineering {
 
@@ -85,6 +97,13 @@ public class ConfigObj {
 
         @Comment("Desabilita a possibilidade dos Dislocators teleportarem entidades quando um jogador bate nelas com o item.")
         public boolean disableDislocatorEntity = false;
+
+    }
+
+    public static class TinkersConstruct {
+
+        @Comment("Desabilita a habilidade da Crafting Station de se conectar aos containers próximos.")
+        public boolean disableStationConnect = false;
 
     }
 

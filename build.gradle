@@ -92,6 +92,9 @@ dependencies {
     //Draconic Evolution
     compileOnly("curse.maven:draconicevolution-223565:3051542")
 
+    //Tinkers' Construct
+    compileOnly("curse.maven:tconstruct-74072:2902483")
+
     //Mixins
     embed("org.spongepowered:mixin:0.8-SNAPSHOT") {
         transitive = false

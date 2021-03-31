@@ -41,6 +41,9 @@ public class SealMixinsLoader implements IFMLLoadingPlugin {
         //Draconic Evolution
         if(config.draconicEvolution.disableDislocatorEntity) loadMixin("draconicevolution", "dislocator");
 
+        //Tinkers' Construct
+        if(config.tinkersConstruct.disableStationConnect) loadMixin("tconstruct", "stationcontainer");
+
         MixinBootstrap.init();
         ModHandler.clear();
     }
