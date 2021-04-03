@@ -44,6 +44,9 @@ public class SealMixinsLoader implements IFMLLoadingPlugin {
         //Tinkers' Construct
         if(config.tinkersConstruct.disableStationConnect) loadMixin("tconstruct", "stationcontainer");
 
+        //Forge
+        if(config.forge.disableEnhancedServerlist) loadMixin("forge", "serverlist");
+
         MixinBootstrap.init();
         ModHandler.clear();
     }
@@ -73,7 +76,7 @@ public class SealMixinsLoader implements IFMLLoadingPlugin {
     }
 
     private void loadMixin(String modid, String mixin){
-        if(modid.equalsIgnoreCase("minecraft") || ModHandler.load(modid)) {
+        if(modid.equalsIgnoreCase("forge") || modid.equalsIgnoreCase("minecraft") || ModHandler.load(modid)) {
             Mixins.addConfiguration("mixins/sealmixins/" + modid + "/mixins." +  mixin + ".json");
             SealMixins.logger.info("Carregando mixin \"" + mixin + "\" para o mod \"" + modid + "\".");
         }

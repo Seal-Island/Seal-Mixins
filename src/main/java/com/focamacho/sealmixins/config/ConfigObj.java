@@ -41,6 +41,10 @@ public class ConfigObj {
     @Comment("Modificações para o Tinkers' Construct")
     public TinkersConstruct tinkersConstruct = new TinkersConstruct();
 
+    @ConfigObject
+    @Comment("Modificações para o Forge")
+    public Forge forge = new Forge();
+
     public static class ImmersiveEngineering {
 
         @Comment("A quantidade máxima de sementes que um Garden-Cloche consegue suportar.\n" +
@@ -104,6 +108,13 @@ public class ConfigObj {
 
         @Comment("Desabilita a habilidade da Crafting Station de se conectar aos containers próximos.")
         public boolean disableStationConnect = false;
+
+    }
+
+    public static class Forge {
+
+        @Comment("Desabilita o ícone de \"Incompatible FML Modded Server\" na lista de servidores.")
+        public boolean disableEnhancedServerlist = false;
 
     }
 
