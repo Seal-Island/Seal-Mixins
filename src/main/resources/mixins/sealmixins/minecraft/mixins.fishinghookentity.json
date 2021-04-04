@@ -1,11 +1,11 @@
 {
   "required": true,
-  "package": "com.focamacho.sealmixins.mixin.forge",
+  "package": "com.focamacho.sealmixins.mixin.minecraft",
   "refmap": "mixins.sealmixins.refmap.json",
-  "target": "@env(CLIENT)",
+  "target": "@env(DEFAULT)",
   "minVersion": "0.8",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "FMLClientHandlerMixin"
+    "EntityFishHookMixin"
   ]
 }

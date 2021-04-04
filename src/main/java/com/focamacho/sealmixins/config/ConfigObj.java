@@ -95,6 +95,9 @@ public class ConfigObj {
         @Comment("Dispara um evento \"EnderTeleportEvent\" ao comer uma Chorus Fruit. Permitindo o cancelamento.")
         public boolean chorusTeleportEvent = true;
 
+        @Comment("Dispara um evento \"AttackEntityEvent\" ao puxar uma entidade com a vara de pesca. Permitindo o cancelamento.")
+        public boolean fishingHookEntityEvent = true;
+
     }
 
     public static class DraconicEvolution {

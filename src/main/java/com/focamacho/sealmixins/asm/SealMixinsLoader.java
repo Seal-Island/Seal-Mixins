@@ -22,6 +22,7 @@ public class SealMixinsLoader implements IFMLLoadingPlugin {
 
         //Minecraft
         if(config.minecraft.chorusTeleportEvent) loadMixin("minecraft", "chorusfruit");
+        if(config.minecraft.fishingHookEntityEvent) loadMixin("minecraft", "fishinghookentity");
 
         //Immersive Engineering
         if(config.immersiveEngineering.gardenClocheMaxSeeds > 1) loadMixin("immersiveengineering", "gardencloche");
