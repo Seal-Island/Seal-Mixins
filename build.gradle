@@ -96,7 +96,7 @@ dependencies {
     compileOnly("curse.maven:tconstruct-74072:2902483")
 
     //Mixins
-    embed("org.spongepowered:mixin:0.8-SNAPSHOT") {
+    embed("org.spongepowered:mixin:0.8.3-SNAPSHOT") {
         transitive = false
     }
 
